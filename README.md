@@ -1,1 +1,1 @@
-Advent Of Work Challenges
+Advent Of Code Challenges
