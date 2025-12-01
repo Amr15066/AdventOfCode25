@@ -21,9 +21,9 @@ def part2():
             rots = abs(number) // 100
             old_dial=dial
             dial = (dial + number) % 100
-            if number > 0 and dial < old_dial and old_dial != 0:
+            if number > 0 and dial < old_dial and old_dial !=0:
                 rots+=1
-            if number < 0 and dial > old_dial and old_dial !=0:
+            if number < 0 and (dial>old_dial or dial==0) and old_dial !=0:
                 rots+=1
             total_rotations+= rots
             count+=1
