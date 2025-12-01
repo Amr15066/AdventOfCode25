@@ -19,15 +19,15 @@ def part2():
             rots = 0
             number = int(line.replace("L","-")) if line[0] == "L" else int(line.replace("R",""))
             rots = abs(number) // 100
-            if number > 0:
-                remainder = number % 100 + dial
-                rots+= 1 if  remainder>= 100 else 0
-            else:
-                remainder= -1*((-1*number)%100) + dial
-                rots+= 1 if  remainder<0 else 0
-            total_rotations += rots
             old_dial=dial
             dial = (dial + number) % 100
+            if number > 0 and dial < old_dial and old_dial != 0:
+                rots+=1
+            if number < 0 and dial > old_dial and old_dial !=0:
+                rots+=1
+            total_rotations+= rots
+            count+=1
+            
     print(dial)
     print(total_rotations)
 
